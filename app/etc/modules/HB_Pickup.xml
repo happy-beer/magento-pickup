@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <HB_Pickup>
+            <!-- Whether our module is active: true or false -->
+            <active>true</active>
+            <!-- Which code pool to use: core, community or local -->
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Adminhtml />
+                <Mage_Shipping />
+                <Mage_Checkout />
+                <Mage_Sales />
+            </depends>
+        </HB_Pickup>
+    </modules>
+</config>

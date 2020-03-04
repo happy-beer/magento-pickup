@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The root node for Magento module configuration -->
+<config>
+    <!--
+        The module's node contains basic
+        information about each Magento module
+    -->
+    <modules>
+        <!--
+            This must exactly match the namespace and module's folder
+            names, with directory separators replaced by underscores
+        -->
+        <HB_Pickup>
+            <!-- The version of our module, starting at 0.0.1 -->
+            <version>0.0.1</version>
+        </HB_Pickup>
+    </modules>
+    <global>
+        <models>
+            <hb_pickup>
+                <class>HB_Pickup_Model</class>
+            </hb_pickup>
+        </models>
+        <blocks>
+            <hb_pickup>
+                <class>HB_Pickup_Block</class>
+            </hb_pickup>
+        </blocks>
+        <events>
+            <checkout_controller_onepage_save_shipping_method>
+                <observers>
+                    <save_point>
+                        <type>singleton</type>
+                        <class>hb_pickup/observer</class>
+                        <method>saveCustomData</method>
+                    </save_point>
+                </observers>
+            </checkout_controller_onepage_save_shipping_method>
+            <checkout_type_onepage_save_order>
+                <observers>
+                    <save_order>
+                        <type>singleton</type>
+                        <class>hb_pickup/observer</class>
+                        <method>updateOrderCreationQuoteWithPickupPoint</method>
+                    </save_order>
+                </observers>
+            </checkout_type_onepage_save_order>
+        </events>
+
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <orderview>
+                    <file>hb_pickup.xml</file>
+                </orderview>
+            </updates>
+        </layout>
+    </adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <hb_pickup>
+                    <file>hb_pickup.xml</file>
+                </hb_pickup>
+            </updates>
+        </layout>
+    </frontend>
+    <!-- Default configuration -->
+    <default>
+        <carriers>
+            <hb_pickup>
+                <active>1</active>
+                <!--
+                     This configuration should not be made visible
+                     to the administrator, because it specifies
+                     the model to be used for this carrier.
+                -->
+                <model>hb_pickup/carrier</model>
+                <!--
+                    The title as referenced in the carrier class
+                -->
+                <title>My amazing pickup points!</title>
+                <!--
+                    The sort order specifies the position that
+                    this carrier appears relative to the other
+                    carriers available in checkout.
+                -->
+                <sort_order>100</sort_order>
+                <!--
+                    Out of the box, Magento offers shipping
+                    carriers the ability to restrict themselves
+                    to specific countries. For this configuration
+                    option, 0 means allow all countries available,
+                    and 1 means allow all countries specified
+                    in the country list that we will add later
+                    in system.xml
+                -->
+                <sallowspecific>0</sallowspecific>
+            </hb_pickup>
+        </carriers>
+    </default>
+</config>

@@ -2,44 +2,56 @@
 # Magento Default Files    #
 #--------------------------#
 
-/PATCH_*.sh
+/*
+!app/
+app/*
 
-/app/etc/local.xml
+!app/code/
+app/code/*
+!app/code/local/
+app/code/local/*
+!app/code/local/HB/
+app/code/local/HB/*
+!app/code/local/HB/Pickup/
 
-/media/*
-!/media/.htaccess
+!app/etc/
+app/etc/*
+!app/etc/modules/
+app/etc/modules/*
+!app/etc/modules/HB_Pickup.xml
 
-!/media/customer
-/media/customer/*
-!/media/customer/.htaccess
+!app/design/
+app/design/*
+!app/design/adminhtml/
+app/design/adminhtml/*
+!app/design/adminhtml/default/
+app/design/adminhtml/default/*
+!app/design/adminhtml/default/default/
+app/design/adminhtml/default/default/*
 
-!/media/dhl
-/media/dhl/*
-!/media/dhl/logo.jpg
+!app/design/adminhtml/default/default/layout/
+app/design/adminhtml/default/default/layout/*
+!app/design/adminhtml/default/default/layout/hb_pickup.xml
 
-!/media/downloadable
-/media/downloadable/*
-!/media/downloadable/.htaccess
+!app/design/adminhtml/default/default/template/
+app/design/adminhtml/default/default/template/*
+!app/design/adminhtml/default/default/template/hb/
+app/design/adminhtml/default/default/template/hb/*
+!app/design/adminhtml/default/default/template/hb/pickup/
 
-!/media/xmlconnect
-/media/xmlconnect/*
+!app/design/frontend/
+app/design/frontend/*
+!app/design/frontend/base/
+app/design/frontend/base/*
+!app/design/frontend/base/default/
+app/design/frontend/base/default/*
 
-!/media/xmlconnect/custom
-/media/xmlconnect/custom/*
-!/media/xmlconnect/custom/ok.gif
+!app/design/frontend/base/default/layout/
+app/design/frontend/base/default/layout/*
+!app/design/frontend/base/default/layout/hb_pickup.xml
 
-!/media/xmlconnect/original
-/media/xmlconnect/original/*
-!/media/xmlconnect/original/ok.gif
-
-!/media/xmlconnect/system
-/media/xmlconnect/system/*
-!/media/xmlconnect/system/ok.gif
-
-/var/*
-!/var/.htaccess
-
-!/var/package
-/var/package/*
-!/var/package/*.xml
-
+!app/design/frontend/base/default/template/
+app/design/frontend/base/default/template/*
+!app/design/frontend/base/default/template/hb/
+app/design/frontend/base/default/template/hb/*
+!app/design/frontend/base/default/template/hb/pickup/
